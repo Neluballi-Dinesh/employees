@@ -1,0 +1,46 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    {% include 'cdnlines.html' %}
+    <title></title>
+  </head>
+  <body>
+    {% include 'navbar.html' %}
+    <style media="screen">
+      body{
+        background-color:#b6f0c4;
+      }
+    </style>
+    <div class="container-fluid mt-2">
+      <div class="row">
+        <div class="col-md-2">
+          <a href="{% url 'chennai' %}" class="btn btn-success">Chennai</a>
+        </div>
+        <div class="col-md-8">
+          <h1 class="text-center display-4  font-weight-bold">Pune - Employees Details</h1>
+        </div>
+        <div class="col-md-2 text-right">
+          <a href="{% url 'mainPage' %}" class="btn btn-primary">mainpage</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-4">
+               <img src="{% static 'images/pune1.jpg' %}" alt="" style="height:100%; width:100%;" >
+            </div>
+            <div class="col-md-4">
+              <img src="{% static 'images/pune2.jpg' %}" alt="" style="height:100%; width:100%; border-radius:50%; border:solid red 2px;" class="img-thumbnail">
+            </div>
+            <div class="col-md-4">
+              <img src="{% static 'images/pune3.jpg' %}" alt="" style ="height:100%; width:100%;" class="img-thumbnail">
+           </div>
+       </div>
+    </div>
+  {% include 'searchform.html' %}
+  {% include 'table.html' %}
+  </body>
+</html>

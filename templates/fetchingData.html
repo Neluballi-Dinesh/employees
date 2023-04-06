@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    {% include 'cdnlines.html' %}
+    <title></title>
+  </head>
+  <body>
+    {% include 'navbar.html' %}
+    <h1 class="text-center display-3 font-weight-bold">NTH - Employees Details</h1>
+    {% if emps %}
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12">
+          <table class="table table-bordered text-center">
+            <thead class="bg-success text-white">
+              <tr>
+                <th>ID</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+                <th>Company</th>
+                <th>Location</th>
+                <th>Salary</th>
+                <th>Address</th>
+              </tr>
+            </thead>
+            <tbody class="bg-dark text-white">
+              {% for i in emps %}
+              <tr>
+                <td>{{ i.id }}</td>
+                <td>{{ i.first_name }}</td>
+                <td>{{ i.last_name }}</td>
+                <td>{{ i.email }}</td>
+                <td>{{ i.company }}</td>
+                <td>{{ i.location }}</td>
+                <td>{{ i.salary }}</td>
+                <td>{{ i.address }}</td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    {% else %}
+    <h1 class="text-center">No Employees Details Available</h1>
+    {% endif %}
+  </body>
+</html>
